@@ -19,13 +19,20 @@ public class EtsaiaMugitzen : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        speed *= -1;
-        AldatuEtsaiaNoranzkoa();
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) ;
+        {
+            speed *= -1;
+            AldatuEtsaiaNoranzkoa();
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.CompareTag("Boo"))
+        {
+            speed *= -1;
+            AldatuEtsaiaNoranzkoa();  
+        }
     }
 
     void AldatuEtsaiaNoranzkoa()
