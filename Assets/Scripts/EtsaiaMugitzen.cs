@@ -19,7 +19,7 @@ public class EtsaiaMugitzen : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) ;
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             speed *= -1;
             AldatuEtsaiaNoranzkoa();
@@ -28,7 +28,7 @@ public class EtsaiaMugitzen : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Boo"))
+        if (other.gameObject.CompareTag("Boo") || other.gameObject.layer == LayerMask.NameToLayer("Spikes"))
         {
             speed *= -1;
             AldatuEtsaiaNoranzkoa();  
